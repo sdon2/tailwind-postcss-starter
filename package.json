@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "cross-env NODE_ENV=development concurrently \"postcss public/tailwind.css -o public/build/tailwind.css --watch\" \"live-server ./public\"",
-    "development": "cross-env NODE_ENV=development postcss public/tailwind.css -o public/build/tailwind.css",
-    "production": "cross-env NODE_ENV=production postcss public/tailwind.css -o public/build/tailwind.css",
+    "serve": "cross-env NODE_ENV=development concurrently \"postcss src/css/tailwind.css -o public/build/main.css --watch\" \"live-server ./public\"",
+    "development": "cross-env NODE_ENV=development postcss src/css/tailwind.css -o public/build/main.css",
+    "production": "cross-env NODE_ENV=production postcss src/css/tailwind.css -o public/build/main.css",
     "dev": "npm run development",
     "prod": "npm run production",
     "start": "npm run serve"
