@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:css": "postcss src/css/tailwind.css -o public/build/main.css -w",
-    "build:css": "cross-env NODE_ENV=production postcss src/css/tailwind.css -o public/build/main.css"
+    "serve": "cross-env NODE_ENV=development concurrently \"postcss public/tailwind.css -o public/build/tailwind.css --watch\" \"live-server ./public\"",
+    "development": "cross-env NODE_ENV=development postcss public/tailwind.css -o public/build/tailwind.css",
+    "production": "cross-env NODE_ENV=production postcss public/tailwind.css -o public/build/tailwind.css",
+    "dev": "npm run development",
+    "prod": "npm run production",
+    "start": "npm run serve"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +21,9 @@
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "cross-env": "^7.0.3",
+    "live-server": "^1.2.1",
     "postcss-cli": "^8.3.1",
     "watch": "^1.0.2"
   }
